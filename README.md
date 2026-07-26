@@ -19,7 +19,7 @@
 | **[HearWeave](https://github.com/WonderfulClaire/HearWeave)** | 智能穿戴麦克风阵列工具箱：波束成形、双耳增强、仿真与声源定位。 |
 | **[rl-from-scratch](https://github.com/WonderfulClaire/rl-from-scratch)** | 强化学习全景库：数学推导 + 从零实现（numpy/PyTorch）+ 可运行验证，11 章到 RLHF 与量化交易。 |
 | **[JobNebula](https://github.com/WonderfulClaire/JobNebula)** | 可解释的职业智能工作台：把零散机会收敛成聚焦的求职流水线。 |
-| **[hokie-career-tutor-mvp](https://github.com/WonderfulClaire/hokie-career-tutor-mvp)** | AI 简历分析 + 模拟面试导师（Virginia Tech Apex Center 孵化）。 |
+| **[BeamBench](https://github.com/WonderfulClaire/BeamBench)** | 波束成形与空间音频的可复现实验报告与工具集，支撑智能穿戴音频的硬核研究。 |
 | **[finance-learning-roadmap](https://github.com/WonderfulClaire/finance-learning-roadmap)** | 个人理财系统学习路线：从复利到资产配置的中文开源教程（9 课 + 5 个零依赖 Python 工具）。 |
 
 <sub>Backend for the AIxcellent series: [AIxcellentHealth-backend](https://github.com/WonderfulClaire/AIxcellentHealth-backend) (Node + Express + Neon Postgres).</sub>
