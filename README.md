@@ -11,13 +11,30 @@ I build small, inspectable training and evaluation systems: define the task, tra
 | Project | What to explore | Start here |
 | --- | --- | --- |
 | [Kimi K3 Deep Dive & Agentic Post-Training Lab](https://github.com/WonderfulClaire/kimi-k3-deep-dive) | Unified agent harness, secure verifier, reward-hacking cases, history/harness ablations, verified trajectories, LoRA-SFT and environment-owned GRPO | [Experiment protocol](https://github.com/WonderfulClaire/kimi-k3-deep-dive/blob/main/docs/experiments.md) · [SFT / GRPO training](https://github.com/WonderfulClaire/kimi-k3-deep-dive/blob/main/docs/training.md) |
-| [5G Diagnostic Agent](https://github.com/WonderfulClaire/5G-Diagnostic-Agent) | Multi-turn tool use, evidence-gated diagnosis, LoRA-SFT/GRPO training, and layered evaluation | [Learning loop](https://github.com/WonderfulClaire/5G-Diagnostic-Agent/blob/main/docs/LEARNING_LOOP.md) · [Leakage-fixed curriculum experiment](https://github.com/WonderfulClaire/5G-Diagnostic-Agent/blob/main/reports/experiments/20260915-verified-curriculum/REPORT.md) |
+| [5G Diagnostic Agent](https://github.com/WonderfulClaire/5G-Diagnostic-Agent) | Multi-turn tool use, LoRA-SFT/GRPO, harness generalization, reward/correctness separation, and offline reward-alignment auditing | [Learning loop](https://github.com/WonderfulClaire/5G-Diagnostic-Agent/blob/main/docs/LEARNING_LOOP.md) · [Experiment protocol](https://github.com/WonderfulClaire/5G-Diagnostic-Agent/blob/main/docs/EXPERIMENT_PROTOCOL.md) |
 | [BLM Multimodal Audit](https://github.com/WonderfulClaire/BLM-Multimodal-Audit) | Visual representation learning, distributed contrastive training, reviewed data production, and multimodal GRPO | [Data flywheel](https://github.com/WonderfulClaire/BLM-Multimodal-Audit/blob/main/docs/DATA_FLYWHEEL.md) · [Distributed experiments](https://github.com/WonderfulClaire/BLM-Multimodal-Audit/blob/main/reports/distributed/20260915/REPORT.md) |
-| [RL From Scratch](https://github.com/WonderfulClaire/rl-from-scratch) | Mathematical and executable path from policy gradients to PPO/GRPO, then verifier and reward-hacking mechanics for agentic RL | [LLM post-training](https://github.com/WonderfulClaire/rl-from-scratch/tree/main/10_rlhf_dpo_grpo) · [Agentic post-training](https://github.com/WonderfulClaire/rl-from-scratch/tree/main/12_agentic_post_training) |
-| [Agent the Hard Way](https://github.com/WonderfulClaire/agent-hard-way) | Go exercises on provider abstractions, tool loops, permissions, context budgets, persistence, compression, and memory | [Exercises and verification](https://github.com/WonderfulClaire/agent-hard-way#readme) |
+| [RL From Scratch](https://github.com/WonderfulClaire/rl-from-scratch) | Mathematical and executable path from policy gradients to PPO/GRPO, including a deterministic demo of how bad rewards reinforce agent exploits | [LLM post-training](https://github.com/WonderfulClaire/rl-from-scratch/tree/main/10_rlhf_dpo_grpo) · [Agentic post-training](https://github.com/WonderfulClaire/rl-from-scratch/tree/main/12_agentic_post_training) |
+| [Agent the Hard Way](https://github.com/WonderfulClaire/agent-hard-way) | Go exercises on provider/tool loops, permissions, context, memory, skill loading/routing, policy write boundaries, scoped subagents, and bounded fan-out | [Exercises and verification](https://github.com/WonderfulClaire/agent-hard-way#readme) |
 | [HearWeave + BeamBench](https://github.com/WonderfulClaire/HearWeave) | Microphone-array simulation plus reproducible experiment/evidence tooling for spatial-audio research | [HearWeave tutorial](https://github.com/WonderfulClaire/HearWeave/blob/main/docs/TUTORIAL.md) · [BeamBench](https://github.com/WonderfulClaire/BeamBench) |
 
 The research repositories distinguish synthetic experiments, implementation checks, and real-world validation. Training configurations and successful tool calls alone are not evidence of model improvement; the linked reports include limitations and unsuccessful experiments.
+
+## How the repositories fit together
+
+```text
+agent-hard-way
+    ↓  what the harness exposes to the policy
+rl-from-scratch
+    ↓  how reward / advantage / PPO / GRPO update the policy
+kimi-k3-deep-dive
+    ↓  verifiable environment + trajectory + SFT + environment-owned GRPO
+5G-Diagnostic-Agent / BLM-Multimodal-Audit
+    ↓  domain tasks, reward audits, leakage controls, held-out evaluation
+research-training-guide
+    ↓  experiment protocol and claim boundaries
+```
+
+The common theme is **traceable learning signals**: separate what the policy can see from what the evaluator verifies, save trajectories and reward components, audit whether the optimizer actually followed the intended contract, and keep held-out tasks/harnesses outside the training loop.
 
 ## What I'm learning
 
