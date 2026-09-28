@@ -36,6 +36,17 @@ research-training-guide
 
 The common theme is **traceable learning signals**: separate what the policy can see from what the evaluator verifies, save trajectories and reward components, audit whether the optimizer actually followed the intended contract, and keep held-out tasks/harnesses outside the training loop.
 
+## Evidence status
+
+| Project | What is already checked | Claim boundary |
+| --- | --- | --- |
+| K3 Agentic Post-Training Lab | CI-tested harness/verifier/replay, history & tool-schema ablations, task-hashed run manifests, verified-trajectory export, SFT/GRPO entry points | Real multi-model and trained-checkpoint results are only reported after actual endpoint/GPU runs |
+| 5G Diagnostic Agent | Real local-model SFT/GRPO runs on the synthetic diagnostic setup, reward-vs-correctness routing audit, held-out harness protocol, paired-bootstrap checkpoint intervals | Synthetic task results do not establish production-network diagnosis quality |
+| BLM Multimodal Audit | Distributed gradient checks, reviewed data pipeline, real VLM GPU training/reload experiments, reward-quality audit | Synthetic/rule-based gains do not establish real moderation accuracy |
+| RL From Scratch | Deterministic mechanism tests for PPO/GRPO, reward hacking, and secure reward contracts | Teaching/mechanism experiments are not presented as frontier-model benchmarks |
+
+I prefer this distinction because a passing training script, rising reward, or attractive demo is weaker evidence than a fixed protocol with an independent evaluator and reproducible artifacts.
+
 ## What I'm learning
 
 - **Post-training:** SFT, policy optimization, preference learning, verifiable reward, reward hacking, harness generalization, and training diagnostics.
