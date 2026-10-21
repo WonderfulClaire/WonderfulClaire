@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="190" viewBox="0 0 1200 190" role="img" aria-labelledby="title desc">
+  <title id="title">A connected research toolkit</title><desc id="desc">Foundations in reinforcement learning and agent engineering connect to training loops, then domain systems in diagnosis, multimodal learning, and spatial audio.</desc>
+  <rect x="1" y="1" width="1198" height="188" rx="18" fill="#0e182b" stroke="#293d59"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif">
+    <text x="30" y="43" fill="#92a5c3" font-size="15" font-weight="600" letter-spacing="2">01 / FOUNDATIONS</text>
+    <text x="30" y="87" fill="#f0f5ff" font-size="25" font-weight="600">Understand the mechanics</text>
+    <text x="30" y="125" fill="#b7c6de" font-size="21">RL From Scratch</text><text x="30" y="156" fill="#8ea3c2" font-size="19">Go agent exercises</text>
+    <text x="430" y="43" fill="#b7a4e6" font-size="15" font-weight="600" letter-spacing="2">02 / LEARNING LOOPS</text>
+    <text x="430" y="87" fill="#f0f5ff" font-size="25" font-weight="600">Build the interaction</text>
+    <text x="430" y="125" fill="#b7c6de" font-size="21">Harness · trajectory · verifier</text><text x="430" y="156" fill="#8ea3c2" font-size="19">SFT / GRPO</text>
+    <text x="830" y="43" fill="#74d9ca" font-size="15" font-weight="600" letter-spacing="2">03 / DOMAIN SYSTEMS</text>
+    <text x="830" y="87" fill="#f0f5ff" font-size="25" font-weight="600">Explore the applications</text>
+    <text x="830" y="125" fill="#b7c6de" font-size="21">5G diagnosis · multimodal learning</text><text x="830" y="156" fill="#8ea3c2" font-size="19">Speech &amp; spatial audio</text>
+  </g>
+  <path d="M378 96H405M398 89L406 96L398 103M778 96H805M798 89L806 96L798 103" fill="none" stroke="#647da1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
